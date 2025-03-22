@@ -83,6 +83,9 @@ body {
   }
 }
 @media (max-width: 992px) {
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.7294117647);
+  }
   .navbar .dis-none-inMobile {
     display: none;
   }
@@ -259,7 +262,8 @@ body {
 @media (max-width: 992px) {
   .services .img-fluid {
     display: block;
-    margin: auto;
+    margin: 20px auto;
+    max-width: 85%;
   }
 }
 
@@ -325,6 +329,7 @@ body {
   padding: 60px 0;
   margin-top: 50px;
   text-align: center;
+  position: relative;
 }
 .contact .gb-head {
   color: #00383a;
@@ -335,4 +340,91 @@ body {
 }
 .contact .row {
   margin-top: 50px;
+}
+.contact .form-control {
+  width: calc(50% - 20px);
+  margin: 10px auto;
+  height: 50px;
+}
+.contact .form-control::-moz-placeholder {
+  color: #00383a;
+}
+.contact .form-control::placeholder {
+  color: #00383a;
+}
+.contact #msg {
+  width: calc(100% - 20px);
+  resize: none;
+  height: 250px;
+}
+.contact #msg,
+.contact .submit {
+  width: calc(100% - 20px);
+  margin: 10px auto;
+}
+.contact .submit {
+  background-color: #00383a;
+  color: white;
+  padding: 10px;
+}
+@media (max-width: 992px) {
+  .contact {
+    padding: 30px 0;
+    margin-top: 0;
+  }
+  .contact .gb-desc {
+    width: 100%;
+  }
+  .contact .alert-success {
+    position: absolute;
+    width: 95%;
+    top: 41%;
+  }
+}
+@media (max-width: 767px) {
+  .contact .row {
+    margin-top: 10px;
+  }
+  .contact form {
+    margin-top: 20px;
+  }
+  .contact .form-control,
+  .contact #msg,
+  .contact .submit {
+    width: 100%;
+  }
+}
+
+footer {
+  padding: 50px 0 20px 0;
+  margin-top: 70px;
+  background-color: #d3f7f7;
+}
+footer .gb-desc {
+  width: 90%;
+}
+footer .foot-desc {
+  display: flex;
+  font-size: 18px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+footer .copy {
+  display: flex;
+  justify-content: space-between;
+}
+footer .copy a {
+  color: #3d986e;
+  font-family: "Boldonse";
+  font-size: 14px;
+}
+@media (max-width: 767px) {
+  footer {
+    margin-top: 0;
+  }
+  footer .copy {
+    text-align: center;
+    display: block;
+    line-height: 1.7;
+  }
 }/*# sourceMappingURL=globals.css.map */

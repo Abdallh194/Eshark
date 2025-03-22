@@ -32,7 +32,8 @@
   @media (max-width: 992px) {
     .img-fluid {
       display: block;
-      margin: auto;
+      margin: 20px auto;
+      max-width: 85%;
     }
   }
 }

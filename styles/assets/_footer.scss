@@ -1,0 +1,31 @@
+footer {
+  padding: 50px 0 20px 0;
+  margin-top: 70px;
+  background-color: #d3f7f7;
+  .gb-desc {
+    width: 90%;
+  }
+  .foot-desc {
+    display: flex;
+    font-size: 18px;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  .copy {
+    display: flex;
+    justify-content: space-between;
+    a {
+      color: $ligh_green;
+      font-family: $header-font;
+      font-size: 14px;
+    }
+  }
+  @media (max-width: 767px) {
+    margin-top: 0;
+    .copy {
+      text-align: center;
+      display: block;
+      line-height: 1.7;
+    }
+  }
+}

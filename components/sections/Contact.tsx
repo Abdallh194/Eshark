@@ -1,17 +1,27 @@
 "use client";
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { Col, Container, Form, FormControl, Row } from "react-bootstrap";
+import {
+  Alert,
+  Col,
+  Container,
+  Form,
+  FormControl,
+  Row,
+  Spinner,
+} from "react-bootstrap";
 import Image from "next/image";
 
 const ContactForm: React.FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
-
     if (!formRef.current) return;
+
+    setLoading(true);
 
     emailjs
       .sendForm(
@@ -24,9 +34,11 @@ const ContactForm: React.FC = () => {
         () => {
           setSuccess(true);
           formRef.current?.reset();
+          setLoading(false);
         },
         (error) => {
           console.error("Email send error:", error);
+          setLoading(false);
         }
       );
   };
@@ -41,9 +53,7 @@ const ContactForm: React.FC = () => {
           as possible. Your message matters to us.
         </h3>
         {success && (
-          <div className="bg-green-100 text-green-700 px-4 py-2 mb-3 rounded">
-            Your message has been sent!
-          </div>
+          <Alert variant="success">Your message has been sent!</Alert>
         )}
         <Row>
           <Col md={12} lg={6}>
@@ -62,33 +72,62 @@ const ContactForm: React.FC = () => {
             lg={6}
             ref={formRef}
             onSubmit={sendEmail}
-            className="space-y-4"
+            className="cus-d-flex"
           >
-            <FormControl
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              required
-              className="w-full border p-2 rounded"
-            />
-            <FormControl
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              required
-              className="w-full border p-2 rounded"
-            />
+            <div className="d-flex flex-wrap">
+              <FormControl
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+              />
+
+              <FormControl
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+              />
+
+              <FormControl
+                type="number"
+                name="phone"
+                placeholder="Your Phone Number"
+                required
+              />
+
+              <FormControl
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                required
+              />
+            </div>
+
             <textarea
               name="message"
+              className="form-control"
+              id="msg"
               placeholder="Your Message"
               required
-              className="w-full border p-2 rounded"
             />
-            <button
-              type="submit"
-              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-            >
-              Send
+
+            <button type="submit" className="submit" disabled={loading}>
+              {loading ? (
+                <>
+                  <Spinner
+                    as="span"
+                    animation="border"
+                    size="sm"
+                    role="status"
+                    aria-hidden="true"
+                    className="me-2"
+                  />
+                  Sending...
+                </>
+              ) : (
+                "Send"
+              )}
             </button>
           </Col>
         </Row>
