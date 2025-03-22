@@ -1,0 +1,51 @@
+.navbar {
+  background-color: #00000073;
+  padding: 20px 0;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  .navbar-toggler {
+    border: none !important;
+  }
+  .me-auto {
+    width: 100%;
+    justify-content: center;
+  }
+  .links a {
+    margin-right: 36px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+  }
+  .active {
+    background-color: $orange-color;
+    color: $green-color !important;
+    border-radius: 7px;
+  }
+  .contact-btn {
+    background-color: $orange-color;
+    color: $green-color;
+    font-size: 18px;
+    padding: 5px 20px;
+    border-radius: 30px;
+  }
+  .navbar-toggler-icon {
+    filter: invert(1);
+  }
+  @media (max-width: 1200px) {
+    .links a {
+      margin-right: 15px;
+      font-size: 18px;
+    }
+  }
+  @media (max-width: 992px) {
+    .dis-none-inMobile {
+      display: none;
+    }
+    .img-fluid {
+      max-width: 90%;
+    }
+  }
+}

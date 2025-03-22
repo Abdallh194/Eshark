@@ -1,0 +1,68 @@
+.landing {
+  background: url("/bg-doctor.webp");
+  background-size: cover;
+  height: 940px;
+  // height: calc(100vh);
+  color: white;
+  position: relative;
+  z-index: 0;
+  background-position-x: 54%;
+  .overlay {
+    position: absolute;
+    content: "";
+    background-color: #06060624;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+  }
+  .sub_head {
+    font-size: clamp(18px, 2vw, 30px);
+    font-weight: 300;
+    color: $orange-color;
+  }
+  .main_head {
+    font-size: clamp(18px, 5vw, 55px);
+    line-height: 1.8;
+    font-family: $header-font;
+  }
+  .main_desc {
+    font-size: 19px;
+    font-weight: 300;
+    width: 73%;
+    color: #d8d8d8;
+    margin-top: 20px;
+    line-height: 1.4;
+  }
+  .more {
+    background-color: $orange-color;
+    color: $green-color;
+    display: inline-block;
+    padding: 9px 30px;
+    margin-top: 17px;
+    font-size: 17px;
+    font-weight: 700;
+    border-radius: 30px;
+    transition: 0.3s;
+    border: 2px solid $orange-color;
+    &:hover {
+      background-color: transparent;
+      color: $orange-color;
+    }
+  }
+  @media (max-width: 992px) {
+    height: 70vh;
+    .overlay {
+      background-color: #06060661;
+    }
+    .main_head {
+      margin-top: 20px;
+    }
+    .sub_head {
+      font-weight: 600;
+    }
+    .main_desc {
+      width: 100%;
+    }
+  }
+}

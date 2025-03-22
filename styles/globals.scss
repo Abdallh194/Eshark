@@ -1,0 +1,46 @@
+@import "bootstrap/dist/css/bootstrap.css"; //bootstrap
+
+//vars
+
+$green-color: #00383a;
+$orange-color: #ff851b;
+$ligh_green: #3d986e;
+$main-font: "Inter";
+$header-font: "Boldonse";
+.container {
+  max-width: 80%;
+  @media (max-width: 1200px) {
+    max-width: 92%;
+  }
+  @media (max-width: 767px) {
+    max-width: 100%;
+  }
+}
+a {
+  text-decoration: none;
+}
+html,
+body {
+  font-family: $main-font !important;
+}
+.cus-d-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.gb-head {
+  font-size: clamp(18px, 2vw, 25px);
+  margin-top: 25px;
+  font-family: $header-font;
+}
+.gb-desc {
+  font-size: 18px;
+  color: #717171;
+}
+@import "assets/navbar";
+@import "assets/landing";
+@import "assets/login";
+@import "assets/about";
+@import "assets/services";
+@import "assets/Where";
+@import "assets/contact";
